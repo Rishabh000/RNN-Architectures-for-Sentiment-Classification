@@ -1,0 +1,204 @@
+{
+  "defaults": {
+    "seed": 42,
+    "batch_size": 32,
+    "num_epochs": 10,
+    "learning_rate": 0.001,
+    "dropout": 0.4,
+    "embedding_dim": 100,
+    "hidden_size": 64,
+    "num_layers": 2,
+    "gradient_clipping": false,
+    "clip_value": 1.0,
+    "save_checkpoints": true,
+    "data_dir": "data",
+    "cache_dir": "data/processed",
+    "results_dir": "results",
+    "num_workers": 0,
+    "pin_memory": false,
+    "architecture": "lstm",
+    "activation": "relu",
+    "optimizer": "adam",
+    "sequence_length": 50
+  },
+  "experiments": [
+    {
+      "name": "01_baseline",
+      "notes": "BASELINE: LSTM/ReLU/Adam/seq50/no_clip"
+    },
+    {
+      "name": "02_arch_rnn_seq25",
+      "architecture": "rnn",
+      "sequence_length": 25,
+      "notes": "RNN with short sequences"
+    },
+    {
+      "name": "03_arch_rnn_seq50",
+      "architecture": "rnn",
+      "sequence_length": 50,
+      "notes": "RNN with medium sequences"
+    },
+    {
+      "name": "04_arch_rnn_seq100",
+      "architecture": "rnn",
+      "sequence_length": 100,
+      "notes": "RNN with long sequences"
+    },
+    {
+      "name": "05_arch_lstm_seq25",
+      "architecture": "lstm",
+      "sequence_length": 25,
+      "notes": "LSTM with short sequences"
+    },
+    {
+      "name": "06_arch_lstm_seq100",
+      "architecture": "lstm",
+      "sequence_length": 100,
+      "notes": "LSTM with long sequences"
+    },
+    {
+      "name": "07_arch_bilstm_seq25",
+      "architecture": "bilstm",
+      "sequence_length": 25,
+      "notes": "BiLSTM with short sequences"
+    },
+    {
+      "name": "08_arch_bilstm_seq50",
+      "architecture": "bilstm",
+      "sequence_length": 50,
+      "notes": "BiLSTM with medium sequences"
+    },
+    {
+      "name": "09_arch_bilstm_seq100",
+      "architecture": "bilstm",
+      "sequence_length": 100,
+      "notes": "BiLSTM with long sequences"
+    },
+    {
+      "name": "10_act_sigmoid",
+      "activation": "sigmoid",
+      "notes": "Sigmoid activation"
+    },
+    {
+      "name": "11_act_tanh",
+      "activation": "tanh",
+      "notes": "Tanh activation"
+    },
+    {
+      "name": "12_act_sigmoid_seq100",
+      "activation": "sigmoid",
+      "sequence_length": 100,
+      "notes": "Sigmoid with long sequences"
+    },
+    {
+      "name": "13_act_tanh_seq100",
+      "activation": "tanh",
+      "sequence_length": 100,
+      "notes": "Tanh with long sequences"
+    },
+    {
+      "name": "14_opt_sgd",
+      "optimizer": "sgd",
+      "notes": "SGD optimizer"
+    },
+    {
+      "name": "15_opt_rmsprop",
+      "optimizer": "rmsprop",
+      "notes": "RMSprop optimizer"
+    },
+    {
+      "name": "16_opt_sgd_seq100",
+      "optimizer": "sgd",
+      "sequence_length": 100,
+      "notes": "SGD with long sequences"
+    },
+    {
+      "name": "17_opt_rmsprop_seq100",
+      "optimizer": "rmsprop",
+      "sequence_length": 100,
+      "notes": "RMSprop with long sequences"
+    },
+    {
+      "name": "18_clip_seq50",
+      "gradient_clipping": true,
+      "notes": "Gradient clipping with medium sequences"
+    },
+    {
+      "name": "19_clip_seq100",
+      "gradient_clipping": true,
+      "sequence_length": 100,
+      "notes": "Gradient clipping with long sequences"
+    },
+    {
+      "name": "20_rnn_sigmoid_sgd",
+      "architecture": "rnn",
+      "activation": "sigmoid",
+      "optimizer": "sgd",
+      "notes": "Challenging combo: RNN + Sigmoid + SGD"
+    },
+    {
+      "name": "21_bilstm_relu_adam_seq100",
+      "architecture": "bilstm",
+      "sequence_length": 100,
+      "notes": "Strong combo: BiLSTM + ReLU + Adam + long seq"
+    },
+    {
+      "name": "22_bilstm_relu_adam_seq100_clip",
+      "architecture": "bilstm",
+      "sequence_length": 100,
+      "gradient_clipping": true,
+      "notes": "Optimal combo with gradient clipping"
+    },
+    {
+      "name": "23_lstm_tanh_adam_seq100",
+      "activation": "tanh",
+      "sequence_length": 100,
+      "notes": "LSTM + Tanh + long sequences"
+    },
+    {
+      "name": "24_lstm_relu_rmsprop_seq100",
+      "optimizer": "rmsprop",
+      "sequence_length": 100,
+      "notes": "LSTM + RMSprop + long sequences"
+    },
+    {
+      "name": "25_bilstm_tanh_adam_seq50",
+      "architecture": "bilstm",
+      "activation": "tanh",
+      "notes": "BiLSTM + Tanh + medium sequences"
+    },
+    {
+      "name": "26_bilstm_sigmoid_adam_seq50",
+      "architecture": "bilstm",
+      "activation": "sigmoid",
+      "notes": "BiLSTM + Sigmoid + medium sequences"
+    },
+    {
+      "name": "27_lstm_relu_sgd_clip",
+      "optimizer": "sgd",
+      "gradient_clipping": true,
+      "notes": "SGD with gradient clipping (stability test)"
+    },
+    {
+      "name": "28_rnn_relu_adam_seq100",
+      "architecture": "rnn",
+      "sequence_length": 100,
+      "notes": "RNN with long sequences (vanishing gradient test)"
+    },
+    {
+      "name": "29_rnn_relu_adam_seq100_clip",
+      "architecture": "rnn",
+      "sequence_length": 100,
+      "gradient_clipping": true,
+      "notes": "RNN + long seq + clipping (stability)"
+    },
+    {
+      "name": "30_bilstm_relu_rmsprop_seq100",
+      "architecture": "bilstm",
+      "optimizer": "rmsprop",
+      "sequence_length": 100,
+      "notes": "BiLSTM + RMSprop + long sequences"
+    }
+  ]
+}
+

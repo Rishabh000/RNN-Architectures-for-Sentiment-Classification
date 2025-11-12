@@ -1,0 +1,30 @@
+{
+  "defaults": {
+    "seed": 42,
+    "batch_size": 32,
+    "num_epochs": 10,
+    "learning_rate": 0.001,
+    "dropout": 0.4,
+    "embedding_dim": 100,
+    "hidden_size": 64,
+    "num_layers": 2,
+    "gradient_clipping": false,
+    "clip_value": 1.0,
+    "save_checkpoints": true,
+    "data_dir": "data",
+    "cache_dir": "data/processed",
+    "results_dir": "results",
+    "num_workers": 0,
+    "pin_memory": false
+  },
+  "experiments": [
+    {
+      "name": "baseline",
+      "architecture": "lstm",
+      "activation": "relu",
+      "optimizer": "adam",
+      "sequence_length": 50
+    }
+  ]
+}
+

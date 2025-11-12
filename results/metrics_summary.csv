@@ -1,0 +1,2 @@
+timestamp,run_id,architecture,activation,optimizer,sequence_length,gradient_clipping,accuracy,f1_macro,loss,epoch_time_seconds,num_epochs,best_epoch,notes
+20251112T212344Z,lstm_relu_rmsprop_seq100_noclip_24_lstm_relu_rmsprop_seq100_20251112T212344Z,lstm,relu,rmsprop,100,0,0.82716,0.8270831615670062,0.4847059053516388,15.695902154203214,10,10,LSTM + RMSprop + long sequences

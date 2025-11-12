@@ -1,0 +1,11 @@
+{
+  "sequence_lengths": [
+    100
+  ],
+  "train_size": 22500,
+  "val_size": 2500,
+  "test_size": 25000,
+  "vocab_size": 10000,
+  "average_review_length": 236.17996,
+  "median_review_length": 177.0
+}
