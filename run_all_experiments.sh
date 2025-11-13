@@ -5,7 +5,7 @@
 set -e  # Exit on error
 
 echo "========================================="
-echo "MSML641 - RNN Sentiment Classification"
+echo "RNN Sentiment Classification"
 echo "Running Full Experiment Suite"
 echo "========================================="
 echo ""
@@ -25,15 +25,6 @@ if [ ! -f "data/IMDB Dataset.csv" ]; then
     echo "https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews"
     exit 1
 fi
-
-echo "✓ Virtual environment active"
-echo "✓ Dataset found"
-echo ""
-
-# Run all experiments
-echo "Starting experiments..."
-echo "This will take approximately 1-2 hours on CPU"
-echo ""
 
 python -m src.train --config configs/full_experiments.json
 
@@ -58,11 +49,4 @@ echo "  - results/metrics.csv          (all experiment metrics)"
 echo "  - results/metrics_summary.csv  (top performers)"
 echo "  - results/plots/               (visualizations)"
 echo "  - results/runs/                (individual run artifacts)"
-echo "  - results/logs/                (training logs)"
 echo ""
-echo "Next steps:"
-echo "  1. Review results/metrics.csv for all experiment outcomes"
-echo "  2. Check results/plots/ for visualizations"
-echo "  3. Use these artifacts to write your report.pdf"
-echo ""
-
